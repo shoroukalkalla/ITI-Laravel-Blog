@@ -63,6 +63,6 @@ All Posts
     </tbody>
 </table>
 <div class="w-50 m-auto mt-3">
-       {!!$posts->links()!!}
+       {{$posts->links()}}
 </div>
 @endsection

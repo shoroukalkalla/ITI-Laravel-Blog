@@ -58,8 +58,10 @@ class PostController extends Controller
 
     public function update($postId){
         $formData = request()->all();
-        array_shift($formData);
-        array_shift($formData);
+        unset($formData['_token']);
+        unset($formData['_method']);
+        // array_shift($formData);
+        // array_shift($formData);
         Post::where('id',$postId)->update($formData);
         return redirect()->route("posts.index");
     }
